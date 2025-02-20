@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.in</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(143, 223, 223);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #091019;
+            color: white;
+        }
+
+    
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            background-color: rgb(17, 47, 92);
+            font-size: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        .nav-links a:hover {
+            background-color: #617a98;
+            border-radius: 5px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            width: 300px;
+        }
+
+        .search button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #e2ab64;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .cart {
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+
+        .signup{
+            padding-left: 5%;
+        }
+
+        .returnorders{
+            display: flex;
+            align-items: right;
+            flex: 1;
+            margin: 0 20px;
+            cursor: pointer;
+            padding-left: 2%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #b3e8f6;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots-container {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #2874f0;
+        }
+
+        /* Banner Item */
+        .banner-item {
+            width: 22%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .banner-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .banner-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .banner-item h3 {
+            padding: 10px;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .banner-item p {
+            padding: 0 10px 10px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer {
+            background-color: #172337;
+            color: white;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #b0bec5;
+            text-decoration: none;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: #ffffff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #131a22;
+            color: #b0bec5;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="a">
+    <nav>
+        <img src="logo.png" alt="Amazon Logo" width="150">
+
+        <div class="location"> ⚲ Update Delivery Location</div>
+
+        <div class="search">
+            <select name="all" id="all">
+                <option value="">≡ All Categories</option>
+                <option value="">Dressing</option>
+                <option value="">Automobiles</option>
+                <option value="">Electronics</option>
+                <option value="">Gadgets</option>
+                <option value="">Furniture</option>
+                <option value="">Decoration</option></select>
+            <input type="text" placeholder="Amazon.in">
+            <button>🔍</button> </label></div>
+
+            <div class="language"> 🇮🇳
+                <select name="languages" id="#">
+                    <option value="">English</option>
+                    <option value="">Hindi</option>
+                    <option value="">Telugu</option>
+                    <option value="">Kannada</option>
+                    <option value="">Tamil</option>
+                </select>
+            </div>
+
+            <div class="signup"> Hello, Sign in Your Account▼</div>   
+            <div class="returnorders">Returns & Orders▼</div>   
+            <div class="cart">🛒 Cart▼</div>           
+        </nav>
+    </div>
+
+        <div class="nav-links">
+            <a href="#">≡ All</a>
+            <a href="#">Home</a>
+            <a href="#">Best Sellers</a>
+            <a href="#">Electronics</a>
+            <a href="#">Fashion</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Mobiles</a>
+            <a href="#">Amazon Pay</a>
+            <a href="#">Prime</a>
+            <a href="#">New Releases</a>
+            <a href="#">Home & Kitchen</a>
+            <a href="#">Computers</a>
+            <a href="#">Books</a>
+            <a href="#">Car & MotorBike</a>
+        </div>        
+        
+    </nav>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="banner.png" alt="Slide 1">
+        </div>
+
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+        <div class="dots-container">
+            <span class="dot" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </div>
+
+    
+    <div class="banner">
+        <div class="banner-item">
+            <img src="pic1.png" alt="Appliances">
+            <h3>Appliances for your Home</h3>
+            <p>Up to 55% Off on Refrigerators, Air Conditioners & more.</p>
+        </div>
+
+        <div class="banner-item">
+            <img src="pic2.png" alt="Home Decor">
+            <h3>Revamp your Home</h3>
+            <p>Cushion covers, Figurines & Stylish Bedsheets.</p>
+        </div>
+
+        <div class="banner-item">
+            <img src="pic3.png" alt="Headphones">
+            <h3>Starting ₹149 | Headphones</h3>
+            <p>Top brands like boAt, Boult & more on sale now.</p>
+        </div>
+
+        <div class="banner-item">
+            <img src="pic4.png" alt="Auto Essentials">
+            <h3>Auto Essentials | Up to 60% Off</h3>
+            <p>Car cleaning kits, Helmets, and Tyre care products.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Amazon Stories</a>
+                <a href="#">Press</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Help</h3>
+                <a href="#">Payments</a>
+                <a href="#">Shipping</a>
+                <a href="#">Cancellation & Returns</a>
+                <a href="#">FAQ</a>
+                <a href="#">Report Infringement</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Policy</h3>
+                <a href="#">Return Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Security</a>
+                <a href="#">Privacy</a>
+                <a href="#">Sitemap</a>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Social</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            © 2025 Amazon Clone. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
